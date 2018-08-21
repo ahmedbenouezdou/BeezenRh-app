@@ -1,0 +1,92 @@
+
+
+<div class="row">
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="title"></h5>
+    </div>
+    <div class="card-body">
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-md-3 pr-md-1">
+                  <div class="form-group">
+                      <input class="form-control" name="titre" [(ngModel)]="activity.titre">
+                    </div>
+                </div>
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <input class="form-control" placeholder="date debut"
+                                name="dateDebut" [(ngModel)]="activity.dateDebut" ngbDatepicker #dateDebut="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-fill btn-primary" (click)="dateDebut.toggle()" type="button">
+                              <img src="img/calendar-icon.svg"/>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 pl-md-1">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <input class="form-control" placeholder="date fin"
+                                name="dateFin" [(ngModel)]="activity.dateFin" ngbDatepicker #dateFin="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn  btn-primary" (click)="dateFin.toggle()" type="button">
+                              <img src="img/calendar-icon.svg" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 pl-md-1">
+                    <button type="submit" class="btn btn-fill btn-primary" (click)="selectToday()">Save</button>
+              </div>
+              </div>
+</form>
+   
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-4 col-md-3 text-center">
+        <div class="btn-group">
+            <button class="btn btn-primary"(click)="previousMonth()">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-6 text-center">
+        <h2 style="  margin-top: 0px">{{ monthYears }}</h2>
+    </div>
+    <div class="col-xs-4 col-md-3 text-center">
+        <div class="btn-group">
+            <button class="btn btn-primary" (click)="nextMonth()">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th class="noactivitie"  *ngFor="let day of monthDay.dayTitre">{{day}}</th>
+            </tr>
+            </thead>
+            <tbody>
+      
+                <tr *ngFor="let days of calendarMonth;">
+
+                    <td  *ngFor="let day of days;" class={{day.classCss}} >{{day.day}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
