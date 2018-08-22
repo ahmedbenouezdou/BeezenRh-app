@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <div class="input-group">
                           <input class="form-control" placeholder="date debut"
-                                name="dateDebut" [(ngModel)]="activity.dateDebut" ngbDatepicker  #dateDebut="ngbDatepicker" [maxDate]="minDate">
+                                name="dateDebut" [(ngModel)]="activity.dateDebut" ngbDatepicker  #dateDebut="ngbDatepicker"  (ngModelChange)="somethingChanged($event)" >
                           <div class="input-group-append">
                             <button class="btn btn-primary" (click)="dateDebut.toggle()" type="button" style="margin: 0px;padding: 0px 20px;">
                               <i class="tim-icons icon-calendar-60"></i>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import {DayManagement} from './dayManagement';
@@ -12,7 +12,7 @@ import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activ
 
 
 export class MyActivityComponent implements OnInit {
-   activity = new MyActivity();
+  activity = new MyActivity();
    monthDay = new  MonthConfig();
    daysTitle: string[];
    days: string[];
@@ -154,4 +154,11 @@ nextMonth(): void {
 selectToday() {
     console.log(this.activity);
   }
+
+  somethingChanged() {
+    console.log(this.activity.dateDebut);
+    this.minDate = this.activity.dateDebut;
+  }
+
+
 }
