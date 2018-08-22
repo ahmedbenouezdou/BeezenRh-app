@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import {DayManagement} from './dayManagement';
-import { MyActivity ,MonthConfig,Events,Action,StructureCss} from './my-activity';
-
+import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activity';
 
 @Component({
   selector: 'app-my-activity',
@@ -15,8 +12,8 @@ import { MyActivity ,MonthConfig,Events,Action,StructureCss} from './my-activity
 
 
 export class MyActivityComponent implements OnInit {
-   activity=new MyActivity();
-   monthDay=new  MonthConfig();
+   activity = new MyActivity();
+   monthDay = new  MonthConfig();
    daysTitle: string[];
    days: string[];
    monthYears: string;
@@ -24,13 +21,14 @@ export class MyActivityComponent implements OnInit {
    years: number;
    date: {year: number, month: number};
    event: Events[];
-   monthevents= new Action();
+   monthevents = new Action();
    model = new Events();
    now = moment().format('LLLL');
    month: number;
-  constructor(private dayManagement: DayManagement) {
-     
-    this.monthevents.events=   [{
+   minDate = {year: 2018, month: 8, day: 1};
+  constructor(private dayManagement: DayManagement, private calendar: NgbCalendar) {
+
+    this.monthevents.events = [{
         title: 'Event 1',
         color: 'red',
         startsAt:  moment(new Date(), "DD/MM/YYYY"),
