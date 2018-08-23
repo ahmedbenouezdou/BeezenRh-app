@@ -166,8 +166,9 @@ selectToday() {
     const nbJour = this.dayManagement.diffdate(dateDebut, dateFin, 'd' );
 
     for ( let i = 0; i <= nbJour; i++) {
-      let startsAt = moment(new Date(this.activity.dateDebut.day+i +"/"+ (this.activity.dateDebut.month - 1)+"/"+ this.activity.dateDebut.year ), 'DD/MM/YYYY');
-      let endsAt= moment(new Date(this.activity.dateDebut.day+i +"/"+ (this.activity.dateDebut.month - 1)+"/"+ this.activity.dateDebut.yeari), 'DD/MM/YYYY');
+      let startsAt = moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
+      let endsAt= moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
+
       this.monthevents.events.push({
         title: 'Event 1',
         color: 'red',
