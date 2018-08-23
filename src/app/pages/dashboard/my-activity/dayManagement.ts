@@ -7,19 +7,23 @@ import { IDayManagement } from './IDayManagement';
 export  class DayManagement implements IDayManagement {
 
    constructor () {}
-
+/**
+ *
+ * @param month
+ * @param ouver
+ */
  workingDayWorked(month: any , ouver: any): any {
-    let d = new Date();
+    const d = new Date();
 
     d.setUTCMonth(month);
 
-    let nbDay = this.getNumberOfDaysMonth(d);
+    const nbDay = this.getNumberOfDaysMonth(d);
     let dayMonth = 0;
     if (ouver) {
         for (let i = 0; i < nbDay; i++) {
-            let dateEvent = new Date(new Date().setDate(new Date().getDate() + i));
+          const dateEvent = new Date(new Date().setDate(new Date().getDate() + i));
 
-            if (dateEvent.getDay() != 0 && dateEvent.getDay() != 6) {
+            if (dateEvent.getDay() !== 0 && dateEvent.getDay() !== 6) {
                 dayMonth++;
             }
 
@@ -31,7 +35,10 @@ export  class DayManagement implements IDayManagement {
 
   }
 
-
+/**
+ *
+ * @param date
+ */
    getNumberOfDaysMonth(date: any): any {
      return new Date(date.getFullYear(), date.getMonth() + 1, -1).getDate() + 1;
 }
@@ -60,7 +67,7 @@ export  class DayManagement implements IDayManagement {
           break;
   }
 
-  let Diff = d2.getTime() - d1.getTime();
+  const Diff = d2.getTime() - d1.getTime();
   return Math.ceil((Diff / div));
 }
 }

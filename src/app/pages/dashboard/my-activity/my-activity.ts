@@ -1,31 +1,30 @@
 export class MyActivity {
-    titre?:string;
-    dateDebut?:Date;
-    dateFin?:Date;
+    titre?: string;
+    dateDebut?: {year: number; month: number; day: number};
+    dateFin?: {year: number; month: number; day: number};
 }
 
-export class MonthConfig{
+export class MonthConfig {
     dayTitre?: string[];
     day: {};
 }
 
-export class Events{
+export class Events {
     title: string;
     color: string;
     startsAt: any;
     endsAt: any;
     etat: number;
   }
-  
-  
-  export class Action{
+
+
+  export class Action {
     events: Events[];
   }
-  
-  export class StructureCss{
+
+  export class StructureCss {
     css: string;
      title: string;
      index: number;
   }
-  
-  
+
