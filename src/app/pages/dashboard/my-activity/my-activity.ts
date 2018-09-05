@@ -1,5 +1,6 @@
 export class MyActivity {
     titre?: string;
+    code?:number;
     dateDebut?: {year: number; month: number; day: number};
     dateFin?: {year: number; month: number; day: number};
 }

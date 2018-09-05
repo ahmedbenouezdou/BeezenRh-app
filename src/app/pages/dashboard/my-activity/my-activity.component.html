@@ -6,11 +6,12 @@
     <div class="card-body">
         <form class="form-inline">
                 <div class="col-md-3 pr-md-1">
-                  <div class="form-group" >
-                      <select class="form-control" id="power" required>
-                          <option *ngFor="let config of configActivity" [value]="config.code">{{config.titre}}</option>
-                        </select>
-                        <input class="form-control" name="titre" [(ngModel)]="activity.titre">
+                      <div  class="form-group" >
+                          <select class="form-control"  id="code" required [(ngModel)]="activity.code" name="code">
+                            <option *ngFor="let config of configActivity" [value]="config.code">{{config.titre}}</option>
+                          </select>
+                            
+                            <input  *ngIf="activity.code === '1'" class="form-control" name="titre" [(ngModel)]="activity.titre">
 
                     </div>
                 </div>

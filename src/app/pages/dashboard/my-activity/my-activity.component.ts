@@ -29,7 +29,7 @@ export class MyActivityComponent implements OnInit {
    maxDate = {};
    configActivity = [
     {titre:'Choisir activité',code:0},	
-    {titre:'Intitulé de la mission',code:1},		
+    {titre:'Intitulé de la mission',code:'1'},		
     {titre:'Congés Payés',code:2},		
       {titre:'Congés Exceptionnels',code:3},	
         {titre:'Intercontrat',code:4},		
