@@ -27,7 +27,21 @@ export class MyActivityComponent implements OnInit {
    month: number;
    minDate = {year: 2018, month: 8, day: 1};
    maxDate = {};
-  constructor(private dayManagement: DayManagement, private calendar: NgbCalendar) {
+   configActivity = [
+    {titre:'Choisir activité',code:0},	
+    {titre:'Intitulé de la mission',code:1},		
+    {titre:'Congés Payés',code:2},		
+      {titre:'Congés Exceptionnels',code:3},	
+        {titre:'Intercontrat',code:4},		
+          {titre:'Autres Absences',code:5},		
+            {titre:'Formation',code:6},		
+              {titre:'Maladie',code:7},
+              {titre:'RTT',code:8},		
+	
+   ];
+ 
+  
+   constructor(private dayManagement: DayManagement, private calendar: NgbCalendar) {
 
     this.monthevents.events = [{
         title: 'Event 1',
