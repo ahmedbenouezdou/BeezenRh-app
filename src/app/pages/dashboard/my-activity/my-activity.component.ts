@@ -12,7 +12,7 @@ import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activ
 
 
 export class MyActivityComponent implements OnInit {
-  activity = new MyActivity();
+   activity = new MyActivity();
    monthDay = new  MonthConfig();
    daysTitle: string[];
    days: string[];
@@ -28,19 +28,19 @@ export class MyActivityComponent implements OnInit {
    minDate = {year: 2018, month: 8, day: 1};
    maxDate = {};
    configActivity = [
-    {titre:'Choisir activité',code:0},	
-    {titre:'Intitulé de la mission',code:'1'},		
-    {titre:'Congés Payés',code:2},		
-      {titre:'Congés Exceptionnels',code:3},	
-        {titre:'Intercontrat',code:4},		
-          {titre:'Autres Absences',code:5},		
-            {titre:'Formation',code:6},		
-              {titre:'Maladie',code:7},
-              {titre:'RTT',code:8},		
-	
+    {titre: 'Choisir activité', code: 0},
+    {titre: 'Intitulé de la mission', code: '1'},
+    {titre: 'Congés Payés', code: 2},
+    {titre: 'Congés Exceptionnels', code: 3},
+    {titre: 'Intercontrat', code: 4},
+    {titre: 'Autres Absences', code: 5},
+    {titre: 'Formation',  code: 6},
+    {titre: 'Maladie', code: 7},
+    {titre: 'RTT', code: 8},
+
    ];
- 
-  
+
+
    constructor(private dayManagement: DayManagement, private calendar: NgbCalendar) {
 
     this.monthevents.events = [{
@@ -180,8 +180,8 @@ selectToday() {
     const nbJour = this.dayManagement.diffdate(dateDebut, dateFin, 'd' );
 
     for ( let i = 0; i <= nbJour; i++) {
-      let startsAt = moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
-      let endsAt= moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
+      const startsAt = moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
+      const endsAt= moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
 
       this.monthevents.events.push({
         title: 'Event 1',

@@ -8,10 +8,13 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
 
+import { AuthGuard } from './pages/_auth';
+
 const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
     children: [
         { path: 'profil', component: ProfilComponent },
         { path: 'home', component: HomeComponent },

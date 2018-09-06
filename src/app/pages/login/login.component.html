@@ -6,7 +6,7 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center"><img class="light" src="http://beezen.fr/wp-content/uploads/2016/01/logo-light@2x.png" width="54" height="40" alt="Logo"> BeezenRH</h5>
-          <form class="form-signin">
+          <form class="form-signin" (ngSubmit)="onSubmit()" >
             <div class="form-label-group">
               <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus ([ngModel])="loginModel.login">
               <label for="inputEmail">Email address</label>
@@ -21,7 +21,7 @@
               <input type="checkbox" class="custom-control-input" id="customCheck1">
               <label class="custom-control-label" for="customCheck1">Remember password</label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="login()">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
           </form>
         </div>
       </div>
