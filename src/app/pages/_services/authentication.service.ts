@@ -10,15 +10,15 @@ export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
     login(username: string, password: string) {
-        return this.http.get<User>(`http://localhost:8082/getToken`, {})
-            .pipe(map(user => {
+        return this.http.get<any>(`http://localhost:8082/getToken`, {})
+            .pipe(map(dataToken => {
                 // login successful if there's a jwt token in the response
-                if (user && user.token) {
+                if (dataToken && dataToken.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('currentUser', JSON.stringify(dataToken));
                 }
 
-                return user;
+                return dataToken;
             }));
     }
 
@@ -26,4 +26,5 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+    
 }

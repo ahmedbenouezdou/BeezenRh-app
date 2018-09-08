@@ -1,4 +1,4 @@
 export class ConfigLogin {
-  login: string;
+  email: string;
   password: string;
 }

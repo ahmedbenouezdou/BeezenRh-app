@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor, ErrorInterceptor } from './pages/_helpers';
 
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes
     )
@@ -41,7 +44,8 @@ const appRoutes: Routes = [
     RouterModule
   ],
   providers: [
-
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ]
 })
 export class AppRoutingModule { }

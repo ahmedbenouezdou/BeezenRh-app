@@ -3,6 +3,9 @@ import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import {DayManagement} from './dayManagement';
 import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activity';
+import { AuthenticationService } from '../../_services';
+import { first } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-my-activity',
@@ -41,7 +44,7 @@ export class MyActivityComponent implements OnInit {
    ];
 
 
-   constructor(private dayManagement: DayManagement, private calendar: NgbCalendar) {
+   constructor(private dayManagement: DayManagement, private calendar: NgbCalendar,  private authenticationService: AuthenticationService) {
 
     this.monthevents.events = [{
         title: 'Event 1',
@@ -166,9 +169,6 @@ nextMonth(): void {
 
 }
 
-selectToday() {
-    console.log(this.activity);
-  }
 
   dateMin() {
     this.minDate = this.activity.dateDebut;
@@ -197,5 +197,8 @@ selectToday() {
     this.maxDate = this.activity.dateFin;
   }
 
+  selectToday() {
+
+  }
 
 }

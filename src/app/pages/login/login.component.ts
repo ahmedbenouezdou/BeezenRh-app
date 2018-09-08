@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
 
       // reset login status
       this.authenticationService.logout();
-
       // get return url from route parameters or default to '/'
       this.returnUrl =  '/dashboard/home';
   }
@@ -40,7 +39,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
    this.submitted = true;
         this.loading = true;
-        this.authenticationService.login(this.loginModel.login, this.loginModel.password)
+        this.authenticationService.login(this.loginModel.email, this.loginModel.password)
             .pipe(first())
             .subscribe(
                 data => {
@@ -50,6 +49,8 @@ export class LoginComponent implements OnInit {
                     this.error = error;
                     this.loading = false;
                 });
+
+
     }
 
 }

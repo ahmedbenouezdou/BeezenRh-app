@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.router';
 import { AppComponent } from './app.component';
@@ -16,7 +15,6 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
 
-import { JwtInterceptor, ErrorInterceptor } from './pages/_helpers';
 
 @NgModule({
   declarations: [
@@ -34,12 +32,9 @@ import { JwtInterceptor, ErrorInterceptor } from './pages/_helpers';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
     FormsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
