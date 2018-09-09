@@ -10,10 +10,13 @@ import { AuthenticationService } from '../_services';
 })
 export class NavbarComponent implements OnInit {
 
+   user = JSON.parse(localStorage.getItem('infoUser'));
+
   constructor(
     private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
+    console.log(this.user);
   }
 
   loginOut(){
