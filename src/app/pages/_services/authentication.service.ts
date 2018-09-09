@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { User } from '../_models';
@@ -10,7 +10,12 @@ export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
     login(username: string, password: string) {
-        return this.http.get<any>(`http://localhost:8082/getToken`, {})
+        var headers_object = new HttpHeaders();
+        const options = new HttpParams();
+
+        headers_object.append('Content-Type', 'application/json');
+
+        return this.http.post<any>(`http://localhost:8082/getToken`, {'username':username,'password':password})
             .pipe(map(dataToken => {
                 // login successful if there's a jwt token in the response
                 if (dataToken && dataToken.token) {
