@@ -3,6 +3,7 @@ export class MyActivity {
     code?: number;
     dateDebut?: {year: number; month: number; day: number};
     dateFin?: {year: number; month: number; day: number};
+    activeMiDay? : boolean;
 }
 
 export class MonthConfig {
@@ -21,6 +22,13 @@ export class Events {
 
   export class Action {
     events: Events[];
+    date: {year: number, month: number};
+    daysTitle: string[];
+    days: string[];
+    monthYears: string;
+    calendarMonth: any[];
+    years: number;
+    month: number;
   }
 
   export class StructureCss {

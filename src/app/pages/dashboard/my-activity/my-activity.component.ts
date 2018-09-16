@@ -62,6 +62,7 @@ export class MyActivityComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.activity.activeMiDay =true;
     this.month = new Date().getUTCMonth();
     this.years = new Date().getUTCFullYear();
     this.calendarMonth = [];
@@ -170,15 +171,15 @@ nextMonth(): void {
 }
 
 
-  dateMin() {
+  dateMin():void {
     this.minDate = this.activity.dateDebut;
   }
 
-  dateMax() {
+  dateMax():void {
     const dateDebut = new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day);
     const dateFin = new Date(this.activity.dateFin.year, (this.activity.dateFin.month - 1), this.activity.dateFin.day);
     const nbJour = this.dayManagement.diffdate(dateDebut, dateFin, 'd' );
-
+    this.activity.activeMiDay = !(nbJour===0);
     for ( let i = 0; i <= nbJour; i++) {
       const startsAt = moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
       const endsAt= moment(new Date(this.activity.dateDebut.year, (this.activity.dateDebut.month - 1), this.activity.dateDebut.day+i), 'DD/MM/YYYY');
@@ -192,9 +193,9 @@ nextMonth(): void {
       });
     }
     this.calendarMonth = [];
-    console.log(this.monthevents.events);
     this.initMonth(new Date());
     this.maxDate = this.activity.dateFin;
+
   }
 
   selectToday() {
