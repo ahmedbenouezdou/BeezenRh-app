@@ -9,11 +9,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './pages/login';
 import { ProfilComponent } from './pages/dashboard/profil/profil.component';
 import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
+import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-a
     ProfilComponent,
     HomeComponent,
     MyActivityComponent,
-    ValidActivityComponent
+    ValidActivityComponent,
+    ForgetsPasswordComponent
   ],
   imports: [
     BrowserModule,
