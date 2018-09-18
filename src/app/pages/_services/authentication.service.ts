@@ -30,5 +30,20 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+
+
+    forgetPassword() {
+        const options = new HttpParams();
+        return this.http.post<any>(`http://localhost:8082/getResetPassword`, {})
+            .pipe(map(dataToken => {
+                // login successful if there's a jwt token in the response
+                if (dataToken && dataToken.token) {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('forgetsPassword', JSON.stringify(dataToken));
+                }
+
+                return dataToken;
+            }));
+    }
     
 }

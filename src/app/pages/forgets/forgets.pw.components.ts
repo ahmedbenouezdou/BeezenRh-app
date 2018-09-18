@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { ConfigLogin } from '../login/login';
+import { ForgetsPasswordService } from './forgets.pw.service';
 
 @Component({
   selector: 'app-forgets',
@@ -20,12 +21,18 @@ export class ForgetsPasswordComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error = '';
-  constructor() {}
+    
+  constructor(
+    private forgetsPasswordService:ForgetsPasswordService,    
+     private route: ActivatedRoute,
+    private router: Router,) {}
 
   ngOnInit() {
 
-    
-  }
+  
+
+}
+  
 
 
 

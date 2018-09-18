@@ -31,7 +31,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'login/forgetsPassword',
-    component: ForgetsPasswordComponent
+    component: ForgetsPasswordComponent,
+    canActivate: [AuthGuard]
   }
   ,
   { path: '',   redirectTo: '/login', pathMatch: 'full' }
