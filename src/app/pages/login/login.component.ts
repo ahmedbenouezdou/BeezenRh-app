@@ -54,17 +54,6 @@ export class LoginComponent implements OnInit {
     }
 
 
-    forgetsPassword():void{
-        this.authenticationService.forgetPassword()
-        .pipe(first())
-        .subscribe(
-            data => {
-                this.router.navigate(['/login/forgetsPassword']);
-            },
-            error => {
-                this.error = error;
-                this.loading = false;
-            });
-    }
+ 
 
 }
