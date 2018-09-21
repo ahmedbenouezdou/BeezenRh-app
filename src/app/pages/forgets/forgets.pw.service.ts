@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import {Md5} from "md5-typescript";
 
 
 @Injectable({ providedIn: 'root' })
@@ -9,10 +8,13 @@ export class ForgetsPasswordService {
     constructor(private http: HttpClient) { }
 
  
-
-    logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+    sendInitPassword(username: string) {
+        const options = new HttpParams();
+        return this.http.post<any>(`http://localhost:8082/forgotPassword`, {'username':username})
+            .pipe(map(dataToken => {
+                return dataToken;
+            }));
     }
+
     
 }

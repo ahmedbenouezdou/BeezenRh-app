@@ -20,12 +20,12 @@ export class ForgetsPasswordComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
-    error = '';
-    
+    error = false;
+    showOK=false;
   constructor(
     private forgetsPasswordService:ForgetsPasswordService,    
      private route: ActivatedRoute,
-    private router: Router,) {}
+    private router: Router) {}
 
   ngOnInit() {
 
@@ -34,7 +34,17 @@ export class ForgetsPasswordComponent implements OnInit {
 }
   
 
-
+onSubmit(){
+  this.forgetsPasswordService.sendInitPassword(this.loginModel.email)
+  .pipe(first())
+  .subscribe(
+      data => {
+        this.router.navigate(['/login']);
+      },
+      error => {
+          this.error = true;
+      });
+}
 
 
 
