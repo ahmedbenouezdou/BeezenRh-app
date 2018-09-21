@@ -15,6 +15,8 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
 import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components';
+import { SettingsComponent } from './pages/dashboard/settings';
+import { UserManagementComponent } from './pages/dashboard/user-management';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components'
     HomeComponent,
     MyActivityComponent,
     ValidActivityComponent,
-    ForgetsPasswordComponent
+    ForgetsPasswordComponent,
+    SettingsComponent,
+    UserManagementComponent
   ],
   imports: [
     BrowserModule,

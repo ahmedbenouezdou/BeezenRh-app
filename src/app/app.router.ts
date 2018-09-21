@@ -10,6 +10,9 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
 import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components';
+import { SettingsComponent } from './pages/dashboard/settings';
+import { UserManagementComponent } from './pages/dashboard/user-management';
+
 import { AuthGuard } from './pages/_auth';
 
 const appRoutes: Routes = [
@@ -21,8 +24,9 @@ const appRoutes: Routes = [
         { path: 'profil', component: ProfilComponent },
         { path: 'home', component: HomeComponent },
         { path: 'myactivite', component: MyActivityComponent },
-        { path: 'validActivity', component: ValidActivityComponent }
-
+        { path: 'validActivity', component: ValidActivityComponent },
+        { path: 'setting', component: SettingsComponent },
+        { path: 'user-management', component: UserManagementComponent }
     ]
   },
   {

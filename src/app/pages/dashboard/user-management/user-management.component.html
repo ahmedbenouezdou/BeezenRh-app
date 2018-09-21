@@ -1,0 +1,137 @@
+<a (click)="open(content)" class="btn"> <i class="tim-icons icon-simple-add"></i><strong>ADD </strong></a>
+<a href="#" class="btn"> <i class="tim-icons icon-cloud-download-93"></i><strong>Import</strong></a>
+
+
+<div class="col-md-12">
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+
+                <tr>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+
+                    <th class="text-center"> </th>
+                </tr>
+                </thead>
+                <tbody>
+                
+
+
+                <tr>
+
+
+                    <td>Philip Chaney</td>
+                    <td>test@test.com</td>
+                    <td>06$$$$$$$$</td>
+                    <td>Développeur/CDI</td>
+
+                    <td class="text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="tim-icons icon-pencil"></i></li>
+                            <li class="list-inline-item"> <i class="tim-icons icon-trash-simple"></i></li>
+
+                          </ul>
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+
+
+                    <td>Philip Chaney</td>
+                    <td>test@test.com</td>
+                    <td>06$$$$$$$$</td>
+                    <td>Développeur/CDI</td>
+
+                    <td class="text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="tim-icons icon-pencil"></i></li>
+                            <li class="list-inline-item"> <i class="tim-icons icon-trash-simple"></i></li>
+
+                          </ul>
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+
+
+                    <td>Philip Chaney</td>
+                    <td>test@test.com</td>
+                    <td>06$$$$$$$$</td>
+                    <td>Développeur/CDI</td>
+
+                    <td class="text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="tim-icons icon-pencil"></i></li>
+                            <li class="list-inline-item"> <i class="tim-icons icon-trash-simple"></i></li>
+
+                          </ul>
+                    </td>
+
+
+                </tr>
+
+
+
+                <tr>
+
+
+                    <td>Philip Chaney</td>
+                    <td>test@test.com</td>
+                    <td>06$$$$$$$$</td>
+                    <td>Développeur/CDI</td>
+
+                    <td class="text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="tim-icons icon-pencil"></i></li>
+                            <li class="list-inline-item"> <i class="tim-icons icon-trash-simple"></i></li>
+
+                          </ul>
+                    </td>
+
+
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">Date of birth</label>
+          <div class="input-group">
+            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
