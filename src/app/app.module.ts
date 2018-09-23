@@ -17,6 +17,7 @@ import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-a
 import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components';
 import { SettingsComponent } from './pages/dashboard/settings';
 import { UserManagementComponent } from './pages/dashboard/user-management';
+import { FirstConnectionComponent } from './pages/login/first-connection/first-connection.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UserManagementComponent } from './pages/dashboard/user-management';
     ValidActivityComponent,
     ForgetsPasswordComponent,
     SettingsComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    FirstConnectionComponent
   ],
   imports: [
     BrowserModule,
