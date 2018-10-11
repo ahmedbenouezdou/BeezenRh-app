@@ -1,0 +1,21 @@
+{
+    "menu":[
+        {"titre":"Dashboard",
+            "role":["admin","consultant"] },
+            
+            {"titre":"My activity",
+            "role":["admin","consultant"] },
+            
+            
+            {"titre":"My profile", 
+            "role":["admin","consultant"] },
+            
+            {"titre":"Valid activity",
+            "role":["admin"] },
+            
+            {"titre":"User Management",
+             "role":["admin"] }
+    ]
+}
+
+
