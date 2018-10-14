@@ -5,7 +5,7 @@ import {DayManagement} from './dayManagement';
 import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activity';
 import { AuthenticationService } from '../../_services';
 import { first } from 'rxjs/operators';
-
+import { MyActivityService } from './my-activity.service'
 
 @Component({
   selector: 'app-my-activity',
@@ -44,7 +44,8 @@ export class MyActivityComponent implements OnInit {
    ];
 
 
-   constructor(private dayManagement: DayManagement, private calendar: NgbCalendar,  private authenticationService: AuthenticationService) {
+   constructor(private dayManagement: DayManagement, private calendar: NgbCalendar,
+      private authenticationService: AuthenticationService, private myactivityService:MyActivityService) {
 
     this.monthevents.events = [{
         title: 'Event 1',
@@ -66,7 +67,13 @@ export class MyActivityComponent implements OnInit {
     this.month = new Date().getUTCMonth();
     this.years = new Date().getUTCFullYear();
     this.calendarMonth = [];
-    this.monthDay.dayTitre = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
+    this.myactivityService.getConfigModule()
+    .subscribe((data: any) =>   {
+        this.monthDay.dayTitre = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
+    }
+);
     this.monthYears = moment(new Date(), 'YYYY MMM', 'fr').format('MMMM YYYY');
     this.initMonth(new Date());
   }
