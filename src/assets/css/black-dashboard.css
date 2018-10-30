@@ -4871,9 +4871,13 @@ table.tablesorter thead tr .headerSortDown {
   height: auto;
 }
 
-.card-chart.card-chart-pie .card-title {
-  margin-bottom: 10px;
+.card-title{
+  margin-top: 20px;
 }
+
+/* .card-chart.card-chart-pie .card-title {
+  margin-bottom: 10px;
+} */
 
 .card-chart.card-chart-pie .card-title i {
   font-size: 1rem;

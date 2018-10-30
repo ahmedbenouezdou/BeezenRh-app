@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor, ErrorInterceptor } from './pages/_helpers';
-
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './pages/login';
 import { ProfilComponent } from './pages/dashboard/profil/profil.component';
 import { HomeComponent } from './pages/dashboard/home/home.component';
 import { MyActivityComponent } from './pages/dashboard/my-activity/my-activity.component';
 import { ValidActivityComponent } from './pages/dashboard/valid-activity/valid-activity.component';
 import { ForgetsPasswordComponent } from './pages/forgets/forgets.pw.components';
-import { SettingsComponent } from './pages/dashboard/settings';
-import { UserManagementComponent } from './pages/dashboard/user-management';
-
-import { AuthGuard } from './pages/_auth';
+import { JwtInterceptor } from './pages/_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './pages/_helpers/error.interceptor';
+import { AuthenticationService } from './pages/_services/authentication.service';
+import { SettingsComponent } from './pages/dashboard/settings/settings.component';
+import { UserManagementComponent } from './pages/dashboard/user-management/user-management.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticationService],
     children: [
         { path: 'profil', component: ProfilComponent },
         { path: 'home', component: HomeComponent },

@@ -3,14 +3,15 @@ import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 import {DayManagement} from './dayManagement';
 import { MyActivity, MonthConfig, Events, Action, StructureCss} from './my-activity';
-import { AuthenticationService } from '../../_services';
+
 import { first } from 'rxjs/operators';
 import { MyActivityService } from './my-activity.service'
+import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({
   selector: 'app-my-activity',
   templateUrl: './my-activity.component.html',
-  styleUrls: ['./my-activity.component.css']
+  styleUrls: ['./my-activity.component.scss']
 })
 
 
