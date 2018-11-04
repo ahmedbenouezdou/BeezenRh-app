@@ -11,7 +11,7 @@ export class UserService extends BehaviorSubject<User[]> {
 
 
 
-    private data: User[] = [];
+  
     private url: string = environment.API_ENDPOINT + "/utilisateurs"
     public admin: boolean = false
     static httpc: HttpClient
@@ -33,7 +33,7 @@ export class UserService extends BehaviorSubject<User[]> {
         return this.http.get<User>(this.url + "/getUtilisateurParId?id=" + id)
     }
 
-    saveUtilisateur(utilisateur, isNew?: boolean) : Observable<User> {
+    saveUtilisateur(utilisateur:User, isNew?: boolean) : Observable<User> {
 
         return this.http.post<User>(this.url, utilisateur);
     }

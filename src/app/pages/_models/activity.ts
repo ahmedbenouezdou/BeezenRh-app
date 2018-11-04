@@ -1,4 +1,4 @@
-export class User {
+export class Activity {
 id: number;
 titre: string;
 typeAction: number;

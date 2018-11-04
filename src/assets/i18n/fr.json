@@ -1,13 +1,14 @@
 {
+    "login.error": "Une Erreur s'est produite lors de l'authentification",
     "login.username": "Nom d'utilisateur",
     "login.password": "Mot de passe",
-    "login.password.forget":"Mot de passe Oubliée",
-    "login.button.signin":"Se Connecter",
-    "login.placeholder.username":"Taper Votre Nom d'Utilisateur",
-    "login.placeholder.password":"Taper Votre mot de passe",
-    "message.save.success":"Enregistré avec succès",
-    "message.save.error":"Une Erreur s'est produite lors de l'enregistrement",
-    "notification.success":"Succès !",
-    "notification.error":"Erreur !",
-    "message.password.invalide":"Mot de passe Invalide"
+    "login.password.forget": "Mot de passe Oubliée",
+    "login.button.signin": "Se Connecter",
+    "login.placeholder.username": "Taper Votre Nom d'Utilisateur",
+    "login.placeholder.password": "Taper Votre mot de passe",
+    "message.save.success": "Enregistré avec succès",
+    "message.save.error": "Une Erreur s'est produite lors de l'enregistrement",
+    "notification.success": "Succès !",
+    "notification.error": "Erreur !",
+    "message.password.invalide": "Mot de passe Invalide"
 }
