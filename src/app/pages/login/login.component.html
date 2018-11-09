@@ -1,41 +1,41 @@
 <div class="wrapper">
 
-    <div class="main-panel">
-        <h5 class="card-title text-center" ><img  src="http://beezen.fr/wp-content/uploads/2016/11/Logo-Beezen-208x50-1.png" ></h5>
-         
-<div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card card-signin my-5">
-        
-        <div class="card-body">
-          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
-          <!--   <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" [(ngModel)]="loginModel.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
-                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                    <div *ngIf="email.errors.required">Email is required</div>
-                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+  <div class="main-panel">
+    <h5 class="card-title text-center"><img src="http://beezen.fr/wp-content/uploads/2016/11/Logo-Beezen-208x50-1.png"></h5>
+
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+
+          <div class="card-body">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="username">{{"login.username" | translate}}</label>
+                <input placeholder="{{'login.placeholder.username'|translate}}" type="text" class="form-control" name="username"
+                  [(ngModel)]="loginModel.username" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted  && username.invalid }"
+                  username required />
+                <div *ngIf="f.submitted && username.invalid " class="invalid-feedback">
+                  <div *ngIf="username.errors.required">{{"message.username.requis" | translate}}</div>
                 </div>
-            </div> -->
-            <div class="form-group">
-              <label for="username">{{"login.username" | translate}}</label>
-              <input placeholder="{{'login.placeholder.username'|translate}}" type="text" class="form-control" name="username" [(ngModel)]="loginModel.username" #Username="ngModel" [ngClass]="{ 'is-invalid': f.submitted }" required username />
-          </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label for="password">{{"login.password" | translate}}</label>
-                <input placeholder="{{'login.placeholder.password'|translate}}" type="password" class="form-control" name="password" [(ngModel)]="loginModel.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
+                <input placeholder="{{'login.placeholder.password'|translate}}" type="password" class="form-control"
+                  name="password" [(ngModel)]="loginModel.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                  required />
                 <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-                    <div *ngIf="password.errors.required">{{"message.password.invalide" | translate}}</div>
+                  <div *ngIf="password.errors.required">{{"message.password.requis" | translate}}</div>
                 </div>
-            </div>
-            <div class="custom-control mb-3">
-              <label routerLink="./forgetsPassword">{{"login.password.forget" | translate}}</label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{"login.button.signin" | translate}}</button>
-          </form>
+              </div>
+              <div class="custom-control mb-3">
+                <label routerLink="./forgetsPassword">{{"login.password.forget" | translate}}</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{"button.signin" |
+                translate}}</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </div>

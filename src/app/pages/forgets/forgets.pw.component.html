@@ -1,31 +1,35 @@
 <div class="wrapper">
 
-        <div class="main-panel">
-            <h5 class="card-title text-center" ><img  src="http://beezen.fr/wp-content/uploads/2016/11/Logo-Beezen-208x50-1.png" ></h5>
-                  
-          <div class="row">
-              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                  <div class="card-body">
-                    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
-                      <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="text" class="form-control" name="email" [(ngModel)]="loginModel.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
-                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                              <div *ngIf="email.errors.required">Email is required</div>
-                              <div *ngIf="email.errors.email">Email must be a valid email address</div>
-                          </div>
+  <div class="main-panel">
+    <h5 class="card-title text-center"><img src="http://beezen.fr/wp-content/uploads/2016/11/Logo-Beezen-208x50-1.png"></h5>
 
-                          <div *ngIf="error" class="invalid-feedback">
-                              <div>Email not existe</div>
-                          </div>
-                      </div>
-                      <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> Reset my password </button>
-                    </form>
-                  </div>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="email">{{"data.email" | translate}}</label>
+                <input placeholder="{{'data.placeholder.email'|translate}}" type="text" class="form-control" name="email"
+                [(ngModel)]="loginModel.email"  #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                  required email />
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">{{"message.email.requis" | translate}}</div>
+                  <div *ngIf="email.errors.email">{{"message.email.invalide" | translate}}</div>
+                </div>
+                <div *ngIf="error" class="invalid-feedback">
+                  <div>Email not existe</div>
                 </div>
               </div>
-            </div>
+              <div class="custom-control mb-3">
+                <label routerLink="./forgetsPassword">{{"login.page" | translate}}</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> {{"button.valider" |
+                translate}}</button>
+            </form>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
 </div>
-    

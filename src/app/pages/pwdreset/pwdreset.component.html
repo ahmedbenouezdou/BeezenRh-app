@@ -1,0 +1,29 @@
+ <div class="wrapper" >
+
+  <div class="main-panel">
+      <h5 class="card-title text-center" ><img  src="http://beezen.fr/wp-content/uploads/2016/11/Logo-Beezen-208x50-1.png" ></h5>
+            
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div  class="card card-signin my-5">
+            <div class="card-body"  >
+              <form  [formGroup]="formGroup"  (ngSubmit)="onSubmit()" novalidate >
+                <div  *ngIf="opened"  class="form-group">
+                  <label for="password">{{"pwdreset.newpassword" | translate}}</label>
+                  <input placeholder="{{'login.placeholder.password'|translate}}" type="password" class="form-control" name="password" formControlName="newpwd" />
+              </div>
+              <div  *ngIf="opened" class="form-group">
+                <label for="password">{{"pwdreset.rnewpassword" | translate}}</label>
+                <input placeholder="{{'login.placeholder.password'|translate}}" type="password" class="form-control" name="password" formControlName="rnewpwd"  />
+            </div>
+            <div class="custom-control mb-3">
+              <label routerLink="./forgetsPassword">{{"login.page" | translate}}</label>
+            </div>
+                <button   *ngIf="opened"  class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> Reset my password </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>

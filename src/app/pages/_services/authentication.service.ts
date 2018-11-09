@@ -43,4 +43,16 @@ export class AuthenticationService implements CanActivate {
         return false;
     }
     
+
+    public forgotPassword(email: String) {
+        return this.http.put(environment.API_ENDPOINT + "/forgotpassword", email);
+      }
+    
+      public verifyCode(code: String) {
+        return this.http.put(environment.API_ENDPOINT + "/verifycode", code);
+      }
+    
+      resetPassword(newpwd: string, code: string) {
+        return this.http.put(environment.API_ENDPOINT + "/resetpassword", { "newpwd": newpwd, "code": code });
+      }
 }

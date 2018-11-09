@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, forwardRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
@@ -19,7 +19,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ng6-toastr-notifications';
+import { ToastrModule } from 'ng6-toastr-notifications'; 
+import { PwdresetComponent } from './pages/pwdreset/pwdreset.component';
  
     
 
@@ -37,13 +38,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     SidebarComponent,
     LoginComponent,
     ForgetsPasswordComponent,
-    FirstConnectionComponent
+    FirstConnectionComponent,
+    PwdresetComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, ToastrModule.forRoot(),
     DashboardModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule ,
     FormsModule,
     TranslateModule.forRoot({
       loader: {

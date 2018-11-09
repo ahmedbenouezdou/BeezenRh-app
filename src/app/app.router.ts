@@ -13,31 +13,29 @@ import { AuthenticationService } from './pages/_services/authentication.service'
 import { SettingsComponent } from './pages/dashboard/settings/settings.component';
 import { UserManagementComponent } from './pages/dashboard/user-management/user-management.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PwdresetComponent } from './pages/pwdreset/pwdreset.component';
 
 const appRoutes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
+  { path: 'pwdreset/:code', component: PwdresetComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'login/forgetsPassword', component: ForgetsPasswordComponent },
+  { path: '**', redirectTo: 'login' },
+  { path: 'pwdreset/:code', component: PwdresetComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthenticationService],
     children: [
-        { path: 'profil', component: ProfilComponent },
-        { path: 'home', component: HomeComponent },
-        { path: 'myactivite', component: MyActivityComponent },
-        { path: 'validActivity', component: ValidActivityComponent },
-        { path: 'setting', component: SettingsComponent },
-        { path: 'user-management', component: UserManagementComponent }
+      { path: 'profil', component: ProfilComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'myactivite', component: MyActivityComponent },
+      { path: 'validActivity', component: ValidActivityComponent },
+      { path: 'setting', component: SettingsComponent },
+      { path: 'user-management', component: UserManagementComponent }
     ]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'login/forgetsPassword',
-    component: ForgetsPasswordComponent
-  }
-  ,
-  { path: '',   redirectTo: '/login', pathMatch: 'full' }
+
 ];
 
 @NgModule({

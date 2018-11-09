@@ -24,11 +24,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/fontsGoogleapis.css" ,
-              "src/assets/css/all.css" ,
-              "src/assets/css/nucleo-icons.css" ,
-              "src/assets/css/bootstrap.min.css" ,
-              "src/assets/css/black-dashboard.css" ,
+              "src/assets/css/fontsGoogleapis.css",
+              "src/assets/css/all.css",
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/black-dashboard.css",
               "src/assets/demo/demo.css"
             ],
             "scripts": [
@@ -36,11 +36,11 @@
               "src/assets/js/core/popper.min.js",
               "src/assets/js/core/bootstrap.min.js",
               "src/assets/js/plugins/perfect-scrollbar.jquery.min.js",
-             "src/assets/js/plugins/chartjs.min.js",
+              "src/assets/js/plugins/chartjs.min.js",
               "src/assets/js/plugins/bootstrap-notify.js",
-              "src/assets/js/black-dashboard.min.js" ,
+              "src/assets/js/black-dashboard.min.js",
               "src/assets/demo/demo.js",
-            "src/assets/js/script.js"
+              "src/assets/js/script.js"
             ]
           },
           "configurations": {
@@ -139,5 +139,10 @@
       }
     }
   },
-  "defaultProject": "BeezenRh-app"
+  "defaultProject": "BeezenRh-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
