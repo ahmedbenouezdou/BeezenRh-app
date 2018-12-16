@@ -37,3 +37,8 @@ export class Events {
      index: number;
   }
 
+  export class fluxOrchestration{
+    idUser: number;
+    activity: Action;
+  }
+

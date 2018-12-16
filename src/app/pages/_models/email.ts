@@ -12,5 +12,4 @@ export class Email{
     administrateur1:string;
     administrateur2:string;
     administrateur3:string;
-    constructor(){ }
 }

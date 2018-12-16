@@ -4,5 +4,4 @@ titre: string;
 typeAction: number;
 isValid :boolean =false;
 date:Date;
-constructor() { }
 }

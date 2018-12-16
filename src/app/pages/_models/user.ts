@@ -1,4 +1,5 @@
 import { Address } from "./address";
+
 export class User {
   id: number;
   username: string;
@@ -16,5 +17,4 @@ export class User {
   facebookLink: String;
   likendinLink: String;
   googleplusLink: String;
-  constructor() { }
 }
