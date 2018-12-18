@@ -12,5 +12,5 @@ export class AppComponent {
     translateService.setDefaultLang('fr');
     translateService.use('fr');
   }
-  title = 'BeezenRh-app';
+  title = 'bZenRh-app';
 }

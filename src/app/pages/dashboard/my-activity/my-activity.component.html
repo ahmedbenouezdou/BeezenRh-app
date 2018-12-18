@@ -11,7 +11,7 @@
                             <option *ngFor="let config of configActivity" [value]="config.code">{{config.titre}}</option>
                           </select>
                             
-                            <input  *ngIf="activity.code === '1'" class="form-control" name="titre" [(ngModel)]="activity.titre">
+                            <input  *ngIf="activity.code === 1" class="form-control" name="titre" [(ngModel)]="activity.titre">
 
                     </div>
                 </div>

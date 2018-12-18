@@ -7,10 +7,6 @@ import { User } from '../_models/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService extends BehaviorSubject<User[]> {
-
-
-
-
   
     private url: string = environment.API_ENDPOINT + "/utilisateurs"
     public admin: boolean = false

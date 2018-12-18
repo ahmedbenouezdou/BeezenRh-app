@@ -7,16 +7,14 @@ import { Router } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
 import { TranslateService } from '@ngx-translate/core';
 
-const formGroup1 = (adresse: Address) => new FormGroup({
-  "id": new FormControl(adresse.id),
+var formGroup1 = (adresse: Address) => new FormGroup({
   "streetAddress": new FormControl(adresse.streetAddress),
   "city": new FormControl(adresse.city),
   "country": new FormControl(adresse.country),
   "postalCode": new FormControl(adresse.postalCode),
 });
 
-const formGroup = (utilisateur: User) => new FormGroup({
-  "id": new FormControl(utilisateur.id),
+var formGroup = (utilisateur: User) => new FormGroup({
   "username": new FormControl(utilisateur.username/* ,Validators.required */),
   "password": new FormControl(utilisateur.password),
   "firstName": new FormControl(utilisateur.firstName),
@@ -25,7 +23,6 @@ const formGroup = (utilisateur: User) => new FormGroup({
   "numtel": new FormControl(utilisateur.numtel),
   "codereset": new FormControl(utilisateur.codereset),
   "datereset": new FormControl(utilisateur.datereset),
-  "company": new FormControl(utilisateur.company),
   "address": new FormControl(utilisateur.address.city),
   "about": new FormControl(utilisateur.about),
   "post": new FormControl(utilisateur.post),
@@ -86,7 +83,6 @@ export class ProfilComponent implements OnInit {
     this.profilForm.value.address=this.addressForm.value;
     this.UtilisateurService.saveUtilisateur(this.profilForm.value).subscribe((utilisateur) => {
     this.toastr.successToastr(this.translateService.instant('message.save.success'), this.translateService.instant('notification.success'));
-
     },(error)=>{
       this.toastr.errorToastr(this.translateService.instant('message.save.error'),this.translateService.instant('notification.error'));
     }
