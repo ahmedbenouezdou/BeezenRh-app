@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BeezenRh-app": {
+    "bZenRh-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/BeezenRh-app",
+            "outputPath": "dist/bZenRh-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BeezenRh-app:build"
+            "browserTarget": "bZenRh-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BeezenRh-app:build:production"
+              "browserTarget": "bZenRh-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BeezenRh-app:build"
+            "browserTarget": "bZenRh-app:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
         }
       }
     },
-    "BeezenRh-app-e2e": {
+    "bZenRh-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -119,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "BeezenRh-app:serve"
+            "devServerTarget": "bZenRh-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "BeezenRh-app:serve:production"
+              "devServerTarget": "bZenRh-app:serve:production"
             }
           }
         },
@@ -139,7 +139,7 @@
       }
     }
   },
-  "defaultProject": "BeezenRh-app",
+  "defaultProject": "bZenRh-app",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

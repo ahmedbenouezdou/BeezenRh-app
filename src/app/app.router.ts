@@ -21,7 +21,6 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'login/forgetsPassword', component: ForgetsPasswordComponent },
   { path: '**', redirectTo: 'login' },
-  { path: 'pwdreset/:code', component: PwdresetComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,
