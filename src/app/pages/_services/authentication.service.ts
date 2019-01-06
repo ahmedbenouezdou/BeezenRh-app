@@ -13,7 +13,7 @@ export class AuthenticationService implements CanActivate {
 
     login(username: string, password: string) {
         const options = new HttpParams();
-        return this.http.post<any>(this.url, {'username':username,'password':/* Md5.init */(password)})
+        return this.http.post<any>(this.url, {'username':username,'password': Md5.init(password)})
             .pipe(map(dataToken => {
                 // login successful if there's a jwt token in the response
                 if (dataToken && dataToken.token) {
